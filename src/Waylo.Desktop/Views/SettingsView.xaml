@@ -1,0 +1,106 @@
+<UserControl x:Class="Waylo.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel MaxWidth="900" HorizontalAlignment="Left">
+        <TextBlock Text="Settings" Style="{StaticResource PageTitle}" Margin="0,0,0,20" />
+
+        <!-- Appearance: this one actually works -->
+        <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+            <StackPanel>
+                <TextBlock Text="APPEARANCE" Style="{StaticResource SectionLabel}" />
+                <RadioButton x:Name="ThemeSystem" GroupName="Theme" Content="Match Windows (light or dark)" Checked="Theme_Checked" Tag="System" />
+                <RadioButton x:Name="ThemeLight" GroupName="Theme" Content="Light" Checked="Theme_Checked" Tag="Light" />
+                <RadioButton x:Name="ThemeDark" GroupName="Theme" Content="Dark" Checked="Theme_Checked" Tag="Dark" />
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+            <StackPanel>
+                <DockPanel>
+                    <Border DockPanel.Dock="Right" Style="{StaticResource SoonPill}">
+                        <TextBlock Text="COMING SOON" Style="{StaticResource PillText}" />
+                    </Border>
+                    <TextBlock Text="ACCOUNT" Style="{StaticResource SectionLabel}" />
+                </DockPanel>
+                <TextBlock Style="{StaticResource Muted}" Margin="0,0,0,12"
+                           Text="Sign in with your Waylo account so family and friends can find you, and set your name, picture and status." />
+                <WrapPanel>
+                    <Button Content="Sign in" Style="{StaticResource PrimaryButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Signing in" />
+                    <Button Content="Create account" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Creating an account" />
+                    <Button Content="Profile picture" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Profile pictures" />
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+            <StackPanel>
+                <DockPanel>
+                    <Border DockPanel.Dock="Right" Style="{StaticResource SoonPill}">
+                        <TextBlock Text="COMING SOON" Style="{StaticResource PillText}" />
+                    </Border>
+                    <TextBlock Text="AUDIO AND VIDEO" Style="{StaticResource SectionLabel}" />
+                </DockPanel>
+                <TextBlock Style="{StaticResource Muted}" Margin="0,0,0,12"
+                           Text="Choose your camera, microphone and speakers, preview your video, and make a test call to check everything works." />
+                <WrapPanel>
+                    <Button Content="Camera" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Camera settings" />
+                    <Button Content="Microphone" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Microphone settings" />
+                    <Button Content="Speakers" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Speaker settings" />
+                    <Button Content="Test call" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Test calls" />
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+            <StackPanel>
+                <DockPanel>
+                    <Border DockPanel.Dock="Right" Style="{StaticResource SoonPill}">
+                        <TextBlock Text="COMING SOON" Style="{StaticResource PillText}" />
+                    </Border>
+                    <TextBlock Text="NOTIFICATIONS AND SOUNDS" Style="{StaticResource SectionLabel}" />
+                </DockPanel>
+                <TextBlock Style="{StaticResource Muted}" Margin="0,0,0,12"
+                           Text="Waylo's own ringtone, outgoing call, new message and end-call sounds, plus Do Not Disturb and which chats can notify you." />
+                <WrapPanel>
+                    <Button Content="Ringtone" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Ringtone settings" />
+                    <Button Content="Message sound" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Message sound settings" />
+                    <Button Content="Do Not Disturb" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Do Not Disturb" />
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+            <StackPanel>
+                <DockPanel>
+                    <Border DockPanel.Dock="Right" Style="{StaticResource SoonPill}">
+                        <TextBlock Text="COMING SOON" Style="{StaticResource PillText}" />
+                    </Border>
+                    <TextBlock Text="PRIVACY AND SECURITY" Style="{StaticResource SectionLabel}" />
+                </DockPanel>
+                <TextBlock Style="{StaticResource Muted}" Margin="0,0,0,12"
+                           Text="End-to-end encryption for calls and chats, who can call you, read receipts, and blocked people." />
+                <WrapPanel>
+                    <Button Content="Who can call me" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Call privacy settings" />
+                    <Button Content="Read receipts" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Read receipt settings" />
+                    <Button Content="Blocked people" Style="{StaticResource GhostButton}" Margin="0,0,8,8" Click="Soon_Click" Tag="Blocking" />
+                </WrapPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource Card}">
+            <StackPanel>
+                <TextBlock Text="ABOUT" Style="{StaticResource SectionLabel}" />
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/Assets/waylo.png" Width="40" Height="40" Margin="0,0,12,0"
+                           RenderOptions.BitmapScalingMode="HighQuality" />
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock x:Name="VersionText" FontSize="15" FontWeight="SemiBold" />
+                        <TextBlock Text="© 2026 Bytehawk Studio" Style="{StaticResource Muted}" />
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Style="{StaticResource Muted}" Margin="0,10,0,0"
+                           Text="This is an early preview: the app's layout is in place and each section shows what's coming. Free and open source (MIT). Updates arrive through the Bytehawk Studio Launcher." />
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</UserControl>
