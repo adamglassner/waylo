@@ -1,9 +1,9 @@
-"""Generates the Inno Setup wizard bitmaps from Assets/waylo.png. Run: python tools/make_wizard_images.py"""
+"""Generates the Inno Setup wizard bitmaps from Assets/ringhawk.png. Run: python tools/make_wizard_images.py"""
 from PIL import Image, ImageDraw
 import os
 
 here = os.path.dirname(os.path.abspath(__file__))
-icon = Image.open(os.path.join(here, "..", "src", "Waylo.Desktop", "Assets", "waylo.png")).convert("RGBA")
+icon = Image.open(os.path.join(here, "..", "src", "RingHawk.Desktop", "Assets", "ringhawk.png")).convert("RGBA")
 out = os.path.join(here, "..", "installer")
 os.makedirs(out, exist_ok=True)
 

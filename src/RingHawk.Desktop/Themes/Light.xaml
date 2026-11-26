@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Light palette (the RingHawk mockup's look). Every key here must also exist in Dark.xaml.
+         The Hawkline sidebar stays navy in both themes. -->
+    <SolidColorBrush x:Key="Brush.Bg" Color="#F3F5F9" />
+    <SolidColorBrush x:Key="Brush.Surface" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Brush.SurfaceAlt" Color="#F1F4F8" />
+    <SolidColorBrush x:Key="Brush.Border" Color="#E3E8EF" />
+    <SolidColorBrush x:Key="Brush.Skeleton" Color="#E6EBF2" />
+    <SolidColorBrush x:Key="Brush.Track" Color="#DCE2EA" />
+    <SolidColorBrush x:Key="Brush.Text" Color="#141B26" />
+    <SolidColorBrush x:Key="Brush.TextMuted" Color="#5B6577" />
+    <SolidColorBrush x:Key="Brush.HoverOverlay" Color="#10000000" />
+
+    <SolidColorBrush x:Key="Brush.Header" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Brush.Search" Color="#F1F4F8" />
+
+    <SolidColorBrush x:Key="Brush.Sidebar" Color="#0F1B2D" />
+    <SolidColorBrush x:Key="Brush.SidebarText" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Brush.SidebarMuted" Color="#C9D3E0" />
+    <SolidColorBrush x:Key="Brush.SidebarLabel" Color="#8E9BB0" />
+    <SolidColorBrush x:Key="Brush.SidebarHover" Color="#16253A" />
+    <SolidColorBrush x:Key="Brush.SidebarSelected" Color="#1C2C44" />
+    <SolidColorBrush x:Key="Brush.SidebarCard" Color="#16253A" />
+
+    <SolidColorBrush x:Key="Brush.Accent" Color="#1A6FD1" />
+    <SolidColorBrush x:Key="Brush.AccentText" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Brush.AccentInk" Color="#1A6FD1" />
+    <SolidColorBrush x:Key="Brush.AccentSoft" Color="#EAF2FC" />
+
+    <SolidColorBrush x:Key="Brush.LiveBg" Color="#E2F3E8" />
+    <SolidColorBrush x:Key="Brush.LiveText" Color="#1E7F45" />
+    <SolidColorBrush x:Key="Brush.LiveDot" Color="#22A55B" />
+
+    <!-- Chats preview -->
+    <SolidColorBrush x:Key="Brush.ChatBg" Color="#F3F5F9" />
+    <SolidColorBrush x:Key="Brush.BubbleIn" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Brush.BubbleInBorder" Color="#E3E8EF" />
+    <SolidColorBrush x:Key="Brush.Selected" Color="#EAF2FC" />
+    <SolidColorBrush x:Key="Brush.Away" Color="#E5A023" />
+    <SolidColorBrush x:Key="Brush.Busy" Color="#D64545" />
+    <SolidColorBrush x:Key="Brush.Offline" Color="#9AA6B8" />
+
+    <SolidColorBrush x:Key="Brush.ToastBg" Color="#141B26" />
+    <SolidColorBrush x:Key="Brush.ToastText" Color="#FFFFFF" />
+</ResourceDictionary>

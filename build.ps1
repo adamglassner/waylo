@@ -1,7 +1,7 @@
-# Builds Waylo:
-#   1. publishes the self-contained single-file exe -> dist\Waylo.exe
-#   2. zips it as the portable download             -> dist\Waylo-<version>-win-x64.zip
-#   3. compiles the Inno Setup installer            -> dist\Waylo-<version>-Setup.exe
+# Builds RingHawk:
+#   1. publishes the self-contained single-file exe -> dist\RingHawk.exe
+#   2. zips it as the portable download             -> dist\RingHawk-<version>-win-x64.zip
+#   3. compiles the Inno Setup installer            -> dist\RingHawk-<version>-Setup.exe
 # Requirements: .NET 8 SDK, Inno Setup 6 (winget install JRSoftware.InnoSetup)
 #
 #   .\build.ps1                     # version from the .csproj
@@ -14,7 +14,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
-$project = Join-Path $root 'src\Waylo.Desktop\Waylo.Desktop.csproj'
+$project = Join-Path $root 'src\RingHawk.Desktop\RingHawk.Desktop.csproj'
 $dist = Join-Path $root 'dist'
 $publish = Join-Path $dist 'publish'
 
@@ -41,13 +41,13 @@ if (Test-Path $publish) { Remove-Item $publish -Recurse -Force }
     -p:Version=$Version -p:AssemblyVersion="$Version.0" -p:FileVersion="$Version.0" -p:InformationalVersion=$Version `
     -o $publish
 if ($LASTEXITCODE -ne 0) { throw 'dotnet publish failed' }
-Copy-Item (Join-Path $publish 'Waylo.exe') (Join-Path $dist 'Waylo.exe') -Force
-Write-Host "Built $dist\Waylo.exe"
+Copy-Item (Join-Path $publish 'RingHawk.exe') (Join-Path $dist 'RingHawk.exe') -Force
+Write-Host "Built $dist\RingHawk.exe"
 
 Write-Host '== Portable zip ==' -ForegroundColor Cyan
-$zip = Join-Path $dist "Waylo-$Version-win-x64.zip"
+$zip = Join-Path $dist "RingHawk-$Version-win-x64.zip"
 if (Test-Path $zip) { Remove-Item $zip -Force }
-Compress-Archive -Path (Join-Path $publish 'Waylo.exe'), (Join-Path $root 'LICENSE') -DestinationPath $zip
+Compress-Archive -Path (Join-Path $publish 'RingHawk.exe'), (Join-Path $root 'LICENSE') -DestinationPath $zip
 Write-Host "Built $zip"
 
 if ($SkipInstaller) { return }
@@ -60,6 +60,6 @@ $iscc = @(
 ) | Where-Object { Test-Path $_ } | Select-Object -First 1
 if (-not $iscc) { throw 'Inno Setup 6 (ISCC.exe) not found. Install it with: winget install JRSoftware.InnoSetup' }
 
-& $iscc "/DPublishDir=$publish" "/DMyAppVersion=$Version" (Join-Path $root 'installer\Waylo.iss')
+& $iscc "/DPublishDir=$publish" "/DMyAppVersion=$Version" (Join-Path $root 'installer\RingHawk.iss')
 if ($LASTEXITCODE -ne 0) { throw 'Inno Setup compile failed' }
-Write-Host "Built $dist\Waylo-$Version-Setup.exe" -ForegroundColor Green
+Write-Host "Built $dist\RingHawk-$Version-Setup.exe" -ForegroundColor Green

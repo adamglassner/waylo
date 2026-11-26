@@ -1,3 +1,3 @@
 @echo off
 cd /d "%~dp0"
-dotnet run --project src\Waylo.Desktop
+dotnet run --project src\RingHawk.Desktop
